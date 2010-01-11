@@ -2,9 +2,10 @@
 	"title":    "GNUBoy",
 	"type":     "web",
 	"main":     "start-gnuboy.sh",
-	"id":       "com.tag234.gnuboy",
+	"id":       "com.webosinternals.sdlgnuboy",
 	"vendor":   "Tristan Jones",
-        "version":  "0.0.3",
+	"vendor_emaily":   "tdjones22@gmail.com",
+        "version":  "0.0.4",
         "icon":     "icon.png"
 }
 
