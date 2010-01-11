@@ -1,0 +1,43 @@
+diff -r -u gnuboy-1.0.3/sys/sdl/sdl.c src/sys/sdl/sdl.c
+--- gnuboy-1.0.3/sys/sdl/sdl.c	2001-09-18 02:10:14.000000000 +0930
++++ src/sys/sdl/sdl.c	2010-01-11 17:39:45.000000000 +1030
+@@ -24,7 +24,8 @@
+ static int use_yuv = -1;
+ static int fullscreen = 1;
+ static int use_altenter = 1;
+-static int use_joy = 1, sdl_joy_num;
++/* Disable Joystick */
++static int use_joy = 0, sdl_joy_num;
+ static SDL_Joystick * sdl_joy = NULL;
+ static const int joy_commit_range = 3276;
+ static char Xstatus, Ystatus;
+@@ -33,7 +34,8 @@
+ static SDL_Overlay *overlay;
+ static SDL_Rect overlay_rect;
+ 
+-static int vmode[3] = { 0, 0, 16 };
++/* Specs of Pre Screen */
++static int vmode[3] = { 320, 480, 16 };
+ 
+ rcvar_t vid_exports[] =
+ {
+@@ -165,7 +167,8 @@
+ 		vmode[1] = 144 * scale;
+ 	}
+ 	
+-	flags = SDL_ANYFORMAT | SDL_HWPALETTE | SDL_HWSURFACE;
++	/* Changed to SWSURFACE, Pre Doesnt Support HWSURFACE */
++	flags = SDL_SWSURFACE;
+ 
+ 	if (fullscreen)
+ 		flags |= SDL_FULLSCREEN;
+@@ -439,7 +442,8 @@
+ 
+ static int sound = 1;
+ static int samplerate = 44100;
+-static int stereo = 1;
++/* Enable Mono Sound */
++static int stereo = 0;
+ static volatile int audio_done;
+ 
+ rcvar_t pcm_exports[] =
