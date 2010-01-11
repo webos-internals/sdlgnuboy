@@ -24,7 +24,8 @@ struct fb fb;
 static int use_yuv = -1;
 static int fullscreen = 1;
 static int use_altenter = 1;
-static int use_joy = 1, sdl_joy_num;
+/* Disable Joystick */
+static int use_joy = 0, sdl_joy_num;
 static SDL_Joystick * sdl_joy = NULL;
 static const int joy_commit_range = 3276;
 static char Xstatus, Ystatus;
@@ -33,7 +34,8 @@ static SDL_Surface *screen;
 static SDL_Overlay *overlay;
 static SDL_Rect overlay_rect;
 
-static int vmode[3] = { 0, 0, 16 };
+/* Specs of Pre Screen */
+static int vmode[3] = { 320, 480, 16 };
 
 rcvar_t vid_exports[] =
 {
@@ -165,7 +167,8 @@ void vid_init()
 		vmode[1] = 144 * scale;
 	}
 	
-	flags = SDL_ANYFORMAT | SDL_HWPALETTE | SDL_HWSURFACE;
+	/* Changed to SWSURFACE, Pre Doesnt Support HWSURFACE */
+	flags = SDL_SWSURFACE;
 
 	if (fullscreen)
 		flags |= SDL_FULLSCREEN;
@@ -439,7 +442,8 @@ struct pcm pcm;
 
 static int sound = 1;
 static int samplerate = 44100;
-static int stereo = 1;
+/* Enable Mono Sound */
+static int stereo = 0;
 static volatile int audio_done;
 
 rcvar_t pcm_exports[] =

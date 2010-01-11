@@ -2297,7 +2297,8 @@ EOF
 fi
 done
 
-for ac_header in linux/joystick.h
+# Work Around to Not load Joystick.h
+for ac_header in linux/joystick2.h
 do
 as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
 echo "$as_me:2303: checking for $ac_header" >&5
