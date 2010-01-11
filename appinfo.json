@@ -4,7 +4,7 @@
 	"main":     "start-gnuboy.sh",
 	"id":       "com.webosinternals.sdlgnuboy",
 	"vendor":   "Tristan Jones",
-	"vendor_emaily":   "tdjones22@gmail.com",
+	"vendor_email":   "tdjones22@gmail.com",
         "version":  "0.0.4",
         "icon":     "icon.png"
 }
