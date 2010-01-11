@@ -1,0 +1,10 @@
+{
+	"title":    "GNUBoy",
+	"type":     "web",
+	"main":     "start-gnuboy.sh",
+	"id":       "com.tag234.gnuboy",
+	"vendor":   "Tristan Jones",
+        "version":  "0.0.3",
+        "icon":     "icon.png"
+}
+
